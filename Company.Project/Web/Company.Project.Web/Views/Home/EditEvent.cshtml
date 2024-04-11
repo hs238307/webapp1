@@ -1,0 +1,88 @@
+﻿@model Company.Project.Web.Models.EventTitles
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Form</title>
+</head>
+<body>
+    @if (TempData["message"] != null)
+    {
+        <script>alert("@TempData["message"]");</script>
+    }
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h2>Event Form</h2>
+                @using (Html.BeginForm("EditEvent", "Home"))
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.title)
+                        @Html.TextBoxFor(m => m.title, Model.title, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.date)
+                        @Html.TextBoxFor(m => m.date, "{0:yyyy-MM-dd}", new { type = "date", @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.location)
+                        @Html.TextBoxFor(m => m.location, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.startTime)
+                        @Html.DropDownList("StartTime", new SelectList(new List<string> { "00:00 AM", "01:00 AM", "02:00 AM", "03:00 AM", "04:00 AM", "05:00 AM", "06:00 AM", "07:00 AM", "08:00 AM", "09:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "13:00 PM", "14:00 PM", "15:00 PM", "16:00 PM", "17:00 PM", "18:00 PM", "19:00 PM", "20:00 PM", "21:00 PM", "22:00 PM", "23:00 PM" }), new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.type)
+                        <div class="radio">
+                            <label>
+                                @Html.RadioButtonFor(m => m.type, true, new { @class = "radio" })
+                                Public
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                @Html.RadioButtonFor(m => m.type, false, new { @class = "radio" })
+                                Private
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.duration)
+                        @Html.TextBoxFor(m => m.duration, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.description)
+                        @Html.TextAreaFor(m => m.description, new { @class = "form-control", rows = "5" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.otherDetails)
+                        @Html.TextAreaFor(m => m.otherDetails, new { @class = "form-control", rows = "5" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.inviteByEmail)
+                        @Html.TextBoxFor(m => m.inviteByEmail, new { @class = "form-control" })
+                    </div>
+
+                    @Html.HiddenFor(m => m.userId)
+                    @Html.HiddenFor(m => m.Id)
+
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

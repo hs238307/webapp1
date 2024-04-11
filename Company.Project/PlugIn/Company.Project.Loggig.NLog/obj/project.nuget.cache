@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "J+ZwW6zzBKMtZ4EQsyUvcaKGCAI4j6o/wls0ipbjyQMw/tIoPAYuz7eyhEJN0K6sp/l4ylhA9We1rJ9iAQ/Srg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hemantsingh02\\hemant-singh\\Company.Project\\Company.Project\\PlugIn\\Company.Project.Loggig.NLog\\Company.Project.Loggig.NLog.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hemantsingh02\\.nuget\\packages\\microsoft.extensions.configuration\\3.0.0\\microsoft.extensions.configuration.3.0.0.nupkg.sha512",
+    "C:\\Users\\hemantsingh02\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.0.0\\microsoft.extensions.configuration.abstractions.3.0.0.nupkg.sha512",
+    "C:\\Users\\hemantsingh02\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.0.0\\microsoft.extensions.configuration.binder.3.0.0.nupkg.sha512",
+    "C:\\Users\\hemantsingh02\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.0.0\\microsoft.extensions.dependencyinjection.3.0.0.nupkg.sha512",
+    "C:\\Users\\hemantsingh02\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.0.0\\microsoft.extensions.dependencyinjection.abstractions.3.0.0.nupkg.sha512",
+    "C:\\Users\\hemantsingh02\\.nuget\\packages\\microsoft.extensions.logging\\3.0.0\\microsoft.extensions.logging.3.0.0.nupkg.sha512",
+    "C:\\Users\\hemantsingh02\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.0.0\\microsoft.extensions.logging.abstractions.3.0.0.nupkg.sha512",
+    "C:\\Users\\hemantsingh02\\.nuget\\packages\\microsoft.extensions.options\\3.0.0\\microsoft.extensions.options.3.0.0.nupkg.sha512",
+    "C:\\Users\\hemantsingh02\\.nuget\\packages\\microsoft.extensions.primitives\\3.0.0\\microsoft.extensions.primitives.3.0.0.nupkg.sha512",
+    "C:\\Users\\hemantsingh02\\.nuget\\packages\\nlog\\4.6.8\\nlog.4.6.8.nupkg.sha512",
+    "C:\\Users\\hemantsingh02\\.nuget\\packages\\nlog.extensions.logging\\1.6.2\\nlog.extensions.logging.1.6.2.nupkg.sha512",
+    "C:\\Users\\hemantsingh02\\.nuget\\packages\\nlog.web.aspnetcore\\4.9.1\\nlog.web.aspnetcore.4.9.1.nupkg.sha512"
+  ],
+  "logs": []
+}

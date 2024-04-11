@@ -1,0 +1,65 @@
+﻿@model Company.Project.Web.Models.CombinedModel
+
+
+<div>
+    @foreach (var item in Model.eventWithComment)
+    {
+        string s = item.startTime;
+        string s1 = s.Split(' ')[0].Replace(":", "");
+        int itemTime = int.Parse(s1);
+
+        string s2 = DateTime.Now.ToString("HH:mm").Replace(".", "");
+        int realTime = int.Parse(s2);
+
+        string year = item.date.ToString("Y");
+        string date = item.date.ToString("dd");
+        string dateYear = date + " " + year;
+
+        <div class="card" style="width: auto; border-radius:0px">
+            <div class="card-body" style="padding:10px">
+                <h5><a class="card-title" href="@Url.Action("Event", "Home", new { Id = item.Id})">@Html.DisplayFor(modelItem => item.title)</a></h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">@Html.DisplayFor(modelItem => dateYear)</h6>
+                <p class="card-text" style="margin:0px"><b>Time:</b>  @Html.DisplayFor(modelItem => item.startTime)</p>
+                <p class="card-text"><b>Location:</b> @Html.DisplayFor(modelItem => item.location)</p>
+                <p class="card-text">@Html.DisplayFor(modelItem => item.description)</p>
+                <p class="card-text"> <b>Duration:</b> @Html.DisplayFor(modelItem => item.duration) hr</p>
+                <a class="btn btn-primary" href="@Url.Action("Event", "Home", new { Id = item.Id})">See details</a>
+                @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { Mymodel = Model.comment }))
+                {
+                    <div class="form-group form-group-lg" style="padding:10px; padding-left:0px">
+                        <p style="font-size:14px;margin:0px"><b> Comments:-</b></p>
+                        @Html.TextBoxFor(Mymodel => Mymodel.comment.comment, new { @class = "form-control" })
+                    </div>
+
+                    <div class="form-group" style="height:0px;width:0px">
+                        <input type="hidden" name="itemId" value="@item.Id" />
+                    </div>
+                    if (User.Identity.IsAuthenticated)
+                    {
+                        <input type="submit" value="Send" style="margin-bottom:10px" class="btn btn-primary" />
+                    }
+                    else
+                    {
+                        <input type="submit" value="Send" style="margin-bottom:10px" class="btn btn-primary disabled" />
+                    }
+                }
+                <p class="card-text" style="font-size:14px"> <b>Past Comments:-</b></p>
+                <div style="max-height:200px;overflow:auto">
+                    @for (int i = 0; i < item.comments.Count; i++)
+                    {
+                        <div class="card mb-2">
+                            <div class="card-body" style="padding:5px">
+                                <p class="small" style="font-size:12px; margin:0px"><b>@Html.DisplayFor(modelItem => item.commenterName[i])</b> </p>
+                                <p style="font-size:16px;margin:0px">@Html.DisplayFor(modelItem => item.comments[i])</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+
+            </div>
+        </div>
+    }
+
+</div>
+
