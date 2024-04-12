@@ -15,7 +15,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'dotnet build src/aspnetapp/aspnetapp.csproj --configuration Release'
+                sh 'dotnet build \Company.Project\Web\Company.Project.Web\Company.Project.Web.csproj --configuration Release'
             }
         }
 
