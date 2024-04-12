@@ -13,11 +13,11 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                sh 'dotnet build Company.Project/Web/Company.Project.Web/Company.Project.Web.csproj --configuration Release'
-            }
-        }
+      //  stage('Build') {
+       //     steps {
+       //         sh 'dotnet build Company.Project/Web/Company.Project.Web/Company.Project.Web.csproj --configuration Release'
+       //     }
+       // }
 
        
 
