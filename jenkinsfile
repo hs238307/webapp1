@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'sameerkataria/freshertrainingdotnet'
+        IMAGE_NAME = 'hemant/webapp'
         IMAGE_TAG = 'latest'
     }
 
