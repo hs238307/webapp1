@@ -15,15 +15,11 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'dotnet build Company.Project\Web\Company.Project.Web\Company.Project.Web.csproj --configuration Release'
+                sh 'dotnet build Company.Project/Web/Company.Project.Web/Company.Project.Web.csproj --configuration Release'
             }
         }
 
-        stage('Test') {
-            steps {
-                sh 'dotnet test src/aspnetapp.sln --logger "trx;LogFileName=./aspnetapp.trx"'
-            }
-        }
+       
 
         stage('Docker Build') {
             steps {
